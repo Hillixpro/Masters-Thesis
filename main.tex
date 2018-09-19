@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Application level monitoring of container-based Micro services }
+\author{Turinawe Hillary}
+\date{September 2018}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+\subsection{Background}
+Nowadays, the most popular word in the field of software architecture is “Microservices.”   Due to the concept of agile development and for the purpose of continuous delivery, developers are tending to develop applications into independent and autonomous microservices to ensure single scalability and independent deployments. Top Companies like Google, Amazon, Azure and Netflix accomplished this transition and also most business companies around the world are tending to develop the backends of applications as microservice-based environments on cloud infrastructures. This also leads to an adaption of the existing monitoring tools and strategies
+
+Microservices is an architecture pattern where software applications are decomposed into a loosely coupled network services of independently deployable Components, each component solves a single business capability and communicate with each other via a common lightweight protocol in order to reduce time to market.
+Microservices are built around business capabilities and they are changeable and deployable independently by fully automated deployment machinery without requiring changes to other parts of the system. This offer a more modular approach to allow developers to quickly code, test and enables the continuous delivery/deployment of new features.  These requirements can be met by using containers to solve most of the resource efficiency problems.
+
+Containers are described as runtime environments with many of the core components of a virtual machine and isolated services of an operating system designed to make packaging easy and execute these micro-services smoothly, each container typically runs a single process and can communicate with other containers using virtual networks. The most known containers technology is a Docker that satisfies all the capability necessary to build microservices in an independent and portable environment. The Docker containerization platform an enabling engine to simplify and speed up the life cycle management of containers.
+
+\subsection{Problem statement }
+Much as microservices offer a more modular approach that leads to continuous delivery, the network of these services become larger in scale and more complex in structure especially with large applications that execute various services which increase the complexity of managing, monitoring, visualizing and mapping dependencies between components. This leads to poor scalability, maintainability and performance issues, hence difficulties in monitoring containers and the services that run inside them.
+
+\subsection{Justification }
+
+Since every microservice is an inquiry-response combination, and when a service is accessed frequently in the course of doing work, the delays that accumulate can seriously impact user response time and productivity. The failure to implement proper governance mechanisms and monitoring of microservice based-containers cause various challenges like critical patches are missed, leading to buggy software, major security vulnerabilities, unmanageable and unstable architecture. As a result, an organization need a robust application monitoring capabilities that provide full visibility into the containers and microservices as well as the insight into how they are being used and their influence on goals of organisation such as better productivity or faster time-to-market.  And the ability of containers to naturally group application components in defined clusters whose network latency can be controlled easily if the users are encouraged to embark on hosting policies for microservices.
+
+\subsection{Main Objectives }
+
+The main objective of this research is to implement a proposed API that communicate with existing monitoring tools such as Kubernetes and Docker container in order to enhance and monitor the performance of application level microservices under a set of metrics and also provide the best practices for managing container based microservices  with polices and standards.
+
+\subsection{Main Objectives }
+
+Monitoring of container-based microservices is necessary for various specific objectives, include;\\
+
+\noindent To know if the application its self is running as expected.\\
+\noindent To know if there are any problems that have to be solved and where they are specifically. \\
+\noindent To know the current load of the application, how is it performing and what are its bottlenecks.\\
+\noindent To obtain various statistics and metrics about the usage of individual application components.\\
+\noindent To fulfil a service-level agreement.
+
+
+\subsection{RESEARCH QUESTIONS }
+
+\noindent QN 1. What are the existing tools for monitoring container-based microservices and how do they operate? 
+
+\noindent QN 2. How can we monitor performance of services running inside containers and the related components that make up microservices of an application? 
+
+\noindent QN3. How can we ensure development teams are working together to use containers and microservices in alignment with organisation needs?
+
+\subsection{SCOPE }
+
+The research covers the ability of services within an application to communicate with one another in containers and the related challenges of service discovery, addressing these requirements, monitoring performance metrics at the microservice application-level such as end-to-end request processing and communication overhead and finally the governance of services through initial design stages of APIs.
+
+\clearpage
+\section{CHAPTER TWO: LITERATURE REVIEW}
+\subsection{Introduction}
+In this Chapter, We Shall review all of the exiting tools and research that has been done relating to our proposed approach in order to get a firm understanding of the issues for resolution.
+\subsection{Related Work}
+In recent years the Microservice Architecture e has become popular for building web applications (Adrian Cockcroft, 2014), Twitter (Jeremy Cloud, 2013). Microservices is Architectural style that realizes a single Software System as many small individual loosely coupled applications which communicate over a network. Each application has its own software development lifecycle. This decoupling allows many small teams to work on individual applications. The Microservice Architecture approach allows faster delivery of smaller incremental changes to an application.
+Open Issues in Scheduling Microservices in the Cloud (Maria Fazio and Antonio Celesti, October 2016). The paper presents open issues towards the adoption of microservices and the future efforts to focus on solving the challenges in encountered.
+KubeNow: A Cloud Agnostic Platform for Microservice-Oriented Application (Marco Capuccini, Anders Larssonyx, Matteo Caroney, Jon Ander Novella, May 2018). KubeNow is a platform that enables straightforward instantiation of microservice-oriented research environments on demand, leveraging on the major cloud providers infrastructure.
+Dashboard for microservices monitoring and management (Benjamin Mayer and Weinreich, 2017). This paper describes the dashboard that is an experimental system for exploring ideas in microservice monitoring and management with an aspect of documentation system and combining information from different stakeholders.
+ There are several tools for monitoring performance of container-based microservices and some of these include:\\
+ Docker stats for monitoring of containers. Container stats run Docker stats with the name(s) of the running container(s) and show the stats. This presents the CPU utilization for each container, the memory used, total memory available to the container and total data sent and received over the network by the container network and disk utilization for all of the containers running on your host. \\ CAdvisor is a useful tool that is trivially easy to setup, free as it is open source and it saves from having to SSH into the server to look at resource consumption and also produces information in a graphical interface graphs. \\
+  
+ 
+ \textbf{Conclusions} \\
+ According to the reviewed literature above, and the mentioned existing tools typically monitor container’s metrics such as CPU, memory, filesystem, and network usage statistics, but there is no research that has been done to monitor performance of microservice at application level inside the containers.
+
+\clearpage
+
+\section{CHAPTER THREE: METHODOLOGY}
+
+\subsection{Introduction}
+In this Chapter, we shall define the case study implementations and tools to use in order to achieve intended objectives. 
+\subsection{Specific Objectives}
+Monitoring of container-based microservices is necessary for various specific objectives, include; 
+To know if the application its self is running as expected, any problems that have to be solved and where they are specifically, the current load of the application, how it performing and what is are its bottlenecks, the users are working with the application, To obtain various metrics and statistics about the usage of individual components.
+\subsection{User Case study}
+In this research, we intend to carry out our research in reference to micro services of an ecommerce application as our case study. These services include; orders service, accounts services, payments service, search service, product pricing service e.t.c.
+
+We shall use the existing tools for monitoring container-based microservices such as Google’s Kubernetes and Docker swarm as the primary platforms.\\
+Kubernetes is an attractive orchestration platform that uses precise language. This provides consistency and helps to simplify communications the API and service operations.
+ We shall mainly focus on metrics that represent business value or key performance statistics, which can help in further developments.
+
+\subsection{Application level metrics}
+
+Much as some of basic the metrics like usage of CPU (processor), memory and disk and network usage can be provided by monitoring the container schedulers, In this case we are most interested in how the individual components performing, usage of some components, statistics about successful and failed requests (Error Rates), amount of time the request takes to respond (Average Response Time),  We shall then aggregate these metrics and create reports from them, fire alerts if something goes wrong and draw various monitoring graphs for operations team. 
+
+
+\end{document}
